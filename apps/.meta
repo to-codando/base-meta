@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "dawn-js-ui": "git@github.com:to-codando/dawn-js-ui.git",
+    "leme-dawn-js-ui": "git@github.com:to-codando/leme-dawn-js-ui.git",
+    "angular-dawn-js-ui": "git@github.com:to-codando/angular-dawn-js-ui.git",
+    "dawn-js-core": "git@github.com:to-codando/down-js-core.git",
+    "doc-dawn-js": "git@github.com:to-codando/doc-dawn-js.git",
+    "doc-dawn-js-ui": "git@github.com:to-codando/doc-dawn-js-ui.git"
+  }
+}
