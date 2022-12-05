@@ -2,6 +2,9 @@ lockfileVersion: 5.4
 
 importers:
 
+  .:
+    specifiers: {}
+
   apps/angular-dawn-js-ui:
     specifiers:
       '@angular-devkit/build-angular': ^14.1.3
@@ -16,8 +19,8 @@ importers:
       '@angular/platform-browser-dynamic': ^14.1.0
       '@angular/router': ^14.1.0
       '@types/jasmine': ~4.0.0
-      dawn-js-core: workspace:^0.0.12
-      dawn-js-ui: workspace:^0.0.4
+      dawn-js-core: workspace:*
+      dawn-js-ui: workspace:*
       jasmine-core: ~4.2.0
       karma: ~6.4.0
       karma-chrome-launcher: ~3.1.0
@@ -55,32 +58,19 @@ importers:
       karma-jasmine-html-reporter: 2.0.0_zrev6agiq27ii3j6tim4lt5dhu
       typescript: 4.7.4
 
+  apps/dawn-js-core:
+    specifiers: {}
+
   apps/dawn-js-ui:
     specifiers:
-      dawn-js-core: workspace:^0.0.12
+      dawn-js-core: workspace:^0.1.1
     dependencies:
       dawn-js-core: link:../dawn-js-core
-
-  apps/doc-dawn-js:
-    specifiers:
-      dawn-js-ui: '*'
-      docsify: ^4.13.0
-    dependencies:
-      dawn-js-ui: link:../dawn-js-ui
-      docsify: 4.13.0
-
-  apps/doc-dawn-js-ui:
-    specifiers:
-      dawn-js-ui: '*'
-      docsify: ^4.13.0
-    dependencies:
-      dawn-js-ui: link:../dawn-js-ui
-      docsify: 4.13.0
 
   apps/leme-dawn-js-ui:
     specifiers:
       cross-env: ^7.0.3
-      dawn-js-core: workspace:^0.0.12
+      dawn-js-core: workspace:*
       dawn-js-ui: workspace:*
       esbuild: ^0.14.54
       esbuild-plugin-path-alias: ^1.0.6
@@ -3428,19 +3418,6 @@ packages:
       '@leichtgewicht/ip-codec': 2.0.4
     dev: true
 
-  /docsify/4.13.0:
-    resolution: {integrity: sha512-dM2D0LZKrhK9e5cPwzOTO8FJ2l9IxgiSmTgLBIMjkBlTs1rAUT5camzekbk2AhH0Tw+5lzkNrSb7dmKFuTiLCA==}
-    requiresBuild: true
-    dependencies:
-      marked: 1.2.9
-      medium-zoom: 1.0.8
-      opencollective-postinstall: 2.0.3
-      prismjs: 1.29.0
-      strip-indent: 3.0.0
-      tinydate: 1.3.0
-      tweezer.js: 1.5.0
-    dev: false
-
   /doctrine/2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
     engines: {node: '>=0.10.0'}
@@ -5983,20 +5960,10 @@ packages:
       - supports-color
     dev: true
 
-  /marked/1.2.9:
-    resolution: {integrity: sha512-H8lIX2SvyitGX+TRdtS06m1jHMijKN/XjfH6Ooii9fvxMlh8QdqBfBDkGUpMWH2kQNrtixjzYUa3SH8ROTgRRw==}
-    engines: {node: '>= 8.16.2'}
-    hasBin: true
-    dev: false
-
   /media-typer/0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
     dev: true
-
-  /medium-zoom/1.0.8:
-    resolution: {integrity: sha512-CjFVuFq/IfrdqesAXfg+hzlDKu6A2n80ZIq0Kl9kWjoHh9j1N9Uvk5X0/MmN0hOfm5F9YBswlClhcwnmtwz7gA==}
-    dev: false
 
   /memfs/3.4.12:
     resolution: {integrity: sha512-BcjuQn6vfqP+k100e0E9m61Hyqa//Brp+I3f0OBmN0ATHlFA8vx3Lt8z57R3u2bPqe3WGDBC+nF72fTH7isyEw==}
@@ -6080,11 +6047,6 @@ packages:
     resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
     engines: {node: '>=12'}
     dev: true
-
-  /min-indent/1.0.1:
-    resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
-    engines: {node: '>=4'}
-    dev: false
 
   /mini-css-extract-plugin/2.6.1_webpack@5.74.0:
     resolution: {integrity: sha512-wd+SD57/K6DiV7jIR34P+s3uckTRuQvx0tKPcvjFlrEylk6P4mQ2KSWk1hblj1Kxaqok7LogKOieygXqBczNlg==}
@@ -6554,11 +6516,6 @@ packages:
       is-docker: 2.2.1
       is-wsl: 2.2.0
     dev: true
-
-  /opencollective-postinstall/2.0.3:
-    resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
-    hasBin: true
-    dev: false
 
   /opener/1.5.2:
     resolution: {integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==}
@@ -7288,11 +7245,6 @@ packages:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
     engines: {node: '>=6'}
     dev: true
-
-  /prismjs/1.29.0:
-    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
-    engines: {node: '>=6'}
-    dev: false
 
   /proc-log/2.0.1:
     resolution: {integrity: sha512-Kcmo2FhfDTXdcbfDH76N7uBYHINxc/8GW7UAVuVP9I+Va3uHSerrnKV6dLooga/gh7GlgzuCCr/eoldnL1muGw==}
@@ -8220,13 +8172,6 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /strip-indent/3.0.0:
-    resolution: {integrity: sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==}
-    engines: {node: '>=8'}
-    dependencies:
-      min-indent: 1.0.1
-    dev: false
-
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
@@ -8364,11 +8309,6 @@ packages:
     resolution: {integrity: sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==}
     dev: true
 
-  /tinydate/1.3.0:
-    resolution: {integrity: sha512-7cR8rLy2QhYHpsBDBVYnnWXm8uRTr38RoZakFSW7Bs7PzfMPNZthuMLkwqZv7MTu8lhQ91cOFYS5a7iFj2oR3w==}
-    engines: {node: '>=4'}
-    dev: false
-
   /tmp/0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
@@ -8424,10 +8364,6 @@ packages:
 
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
-
-  /tweezer.js/1.5.0:
-    resolution: {integrity: sha512-aSiJz7rGWNAQq7hjMK9ZYDuEawXupcCWgl3woQQSoDP2Oh8O4srWb/uO1PzzHIsrPEOqrjJ2sUb9FERfzuBabQ==}
-    dev: false
 
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
